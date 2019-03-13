@@ -1,0 +1,11 @@
+﻿1.docker build构建镜像
+	docker build -t cxt/webapp:v1 -f ./Dockerfile .
+2.docker run启动容器
+	docker run --name webapp -d -p 8080:8080 -v /data/log:/data/log -e TZ=Asia/Shanghai cxt/webapp:v1
+/* 备注
+--name 设置实例名
+-p 8080:8080 端口映射
+-v /data/log:/data/log
+-e TZ=Asia/Shanghai 加入环境变量，设置时区
+-d 是镜像名称
+*/
